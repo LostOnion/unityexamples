@@ -8,5 +8,5 @@ android:
         - extra
         
 script:
-    - bash cd UnitySplashScreen/Android && gradlew makeJar
+    - cd UnitySplashScreen/Android && bash gradlew makeJar
     
