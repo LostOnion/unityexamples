@@ -62,6 +62,8 @@ public class SplashScreen extends Activity {
             splashImage.setImageResource(mSplashImage);
             layout.addView(splashImage, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
+			splashImage.setScaleType(ImageView.ScaleType.FIT_XY);
+			
             setContentView(layout, new  ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         }
 
