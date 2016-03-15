@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 12
+        targetSdkVersion 23
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+task cleanJar(type: Delete) {
+    delete 'build/outputs/jar/splashscreenplugin.jar'
+}
+
+task makeJar(type: Copy) {
+    from('build/intermediates/bundles/release/') into('build/outputs/jar/')
+    include('classes.jar')
+    rename ('classes.jar', 'splashscreenplugin.jar')
+}
+
+makeJar.dependsOn 'assemble'
+
+dependencies {
+}
